@@ -11,6 +11,8 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+
+
 /**
  * Clase que hereda de JFrame y que implementa la interfaz ILibroForm
  * @Component indica que esta clase es un componente
@@ -33,6 +35,7 @@ public class LibroForm extends JFrame {
     private JButton agregarButton;
     private JButton modificarButton;
     private JButton eliminarButton;
+    private JButton excelButton;
     private DefaultTableModel tablaModeloLibros;
 
     @Autowired
@@ -49,6 +52,12 @@ public class LibroForm extends JFrame {
         });
         modificarButton.addActionListener(e -> modificarLibro());
         eliminarButton.addActionListener(e -> eliminarLibro());
+        excelButton.addActionListener(e ->  exportarExcel());
+    }
+
+    private void exportarExcel() {
+        libroServicio.guardarExcel();
+        mostrarMensaje("Se exportó el archivo correctamente");
     }
 
     // método para inicializar la forma donde se inicializan los componentes de la interfaz de usuario

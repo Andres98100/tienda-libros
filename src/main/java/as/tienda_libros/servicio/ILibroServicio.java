@@ -10,4 +10,6 @@ public interface ILibroServicio {
     Libro encontrarLibroPorId(Integer id);
     void guardarLibro(Libro libro);
     void eliminarLibro(Libro libro);
+
+    void guardarExcel();
 }

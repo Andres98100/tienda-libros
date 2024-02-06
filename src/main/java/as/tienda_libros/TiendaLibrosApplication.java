@@ -23,6 +23,7 @@ public class TiendaLibrosApplication {
 			// Se crea un objeto de la clase LibroForm
 			LibroForm libroForm = context.getBean(LibroForm.class);
 			libroForm.setVisible(true);
+
 		});
 	}
 }
